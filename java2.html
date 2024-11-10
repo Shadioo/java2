@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تغییر عکس</title>
+    <style>
+        #myImage {
+            width: 500px; 
+            height:500;
+            justify-content: center;
+            border-radius: 20%;
+        }
+        body {
+           
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            text-align: center; 
+            margin: 0; 
+        }
+       button{
+       background-color: #d32020;
+       width: 200px; 
+       border-radius: 20%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1><b>change photo</h1></b>
+    <img id="myImage" src="A1.jpg" alt="عکس اول">
+    <br>
+    <button id="changeImageButton">change</button>
+
+    <script>
+        const button = document.getElementById('changeImageButton');
+        const image = document.getElementById('myImage');
+
+        
+        const images = ['A1.jpg', 'A2.jpg'];
+        let currentImageIndex = 0;
+
+        button.onclick = function() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            
+            image.src = images[currentImageIndex];
+        };
+    </script>
+
+</body>
+</html>
